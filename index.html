@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ajax Example</title>
+  </head>
+  <body>
+    <h1>Ajax Example</h1>
+    <p>The form below will use a fake api to serach for a blog posts comments</p>
+
+    <form class="form">
+      <label>Enter a Post ID</label>
+      <input class="post-id-input" required type="number">
+      <button type="submit" name="button">Submit</button>
+    </form>
+
+    <div class="output"></div>
+
+    <!-- Handlebars template  -->
+    <script id="comments-template" type="text/x-handlebars-template">
+      <ul>
+        {{#each comments}}
+          <li>{{this.body}}</li>
+        {{/each}}
+      </ul>
+    </script>
+
+
+    <!--
+      Axios is a librays for sending ajax requests.
+      link to documentaion: https://github.com/axios/axios
+     -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" charset="utf-8"></script>
+    <!--
+      Handlebars is a client side template engine.
+      link to documentaion:https://handlebarsjs.com/
+     -->
+    <script src="handlebars-379172e.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+  </body>
+</html>
